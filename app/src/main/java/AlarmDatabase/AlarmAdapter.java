@@ -5,6 +5,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.TextView;
+
+import com.example.hoa.alarm.R;
 
 import java.util.List;
 
@@ -28,21 +31,46 @@ public class AlarmAdapter extends BaseAdapter {
 
     @Override
     public int getCount() {
-        return 0;
+        if (lsTime.isEmpty()) {
+            return 0;
+        }
+        else {
+            return lsTime.size();
+        }
     }
 
     @Override
     public Object getItem(int position) {
-        return null;
+        return lsTime.get(position);
     }
 
     @Override
     public long getItemId(int position) {
-        return 0;
+        return position;
     }
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        return null;
+        ViewHolder holder;
+        if (convertView==null){
+            convertView=layoutInflater.inflate(R.layout.item_listview,null);
+            holder=new ViewHolder();
+            holder.tvName=(TextView) convertView.findViewById(R.id.tvName);
+            holder.tvTime=(TextView) convertView.findViewById(R.id.tvTime);
+            convertView.setTag(holder);
+        }
+        else {
+            holder=(ViewHolder) convertView.getTag();
+        }
+
+        TimeRing timeRing=this.lsTime.get(position);
+        holder.tvTime.setText(timeRing.getTime().toString());
+        holder.tvName.setText(timeRing.getName());
+        return convertView;
+    }
+
+    static class ViewHolder{
+        TextView tvName;
+        TextView tvTime;
     }
 }

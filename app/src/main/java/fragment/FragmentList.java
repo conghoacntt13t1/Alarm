@@ -7,6 +7,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ListView;
 
 import com.example.hoa.alarm.R;
 
@@ -15,10 +16,13 @@ import com.example.hoa.alarm.R;
  */
 
 public class FragmentList extends Fragment {
+
+    private ListView lvList;
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view=inflater.inflate(R.layout.list_fragment,null);
+        lvList=(ListView) view.findViewById(R.id.lvTime);
         return view;
     }
 }

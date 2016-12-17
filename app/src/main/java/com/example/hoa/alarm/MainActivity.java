@@ -6,14 +6,12 @@ import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.SearchView;
 import android.view.Menu;
-import android.view.View;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import fragment.AddFragment;
+import fragment.FragmentAdd;
 import fragment.FragmentList;
 import viewpager.AlarmPagerAdapter;
 
@@ -29,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
     }
     private void initPage(){
         List<Fragment> lsFragment=new ArrayList<>();
-        lsFragment.add(new AddFragment());
+        lsFragment.add(new FragmentAdd());
         lsFragment.add(new FragmentList());
 
         mAlarmPagerAdapter =new AlarmPagerAdapter(this.getSupportFragmentManager(),lsFragment);

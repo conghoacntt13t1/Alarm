@@ -84,7 +84,7 @@ public class TimeDatabase {
         cv.put(COLUMN_NAME,timeRing.getName());
         cv.put(COLUMN_DATE,format.format(timeRing.getDate()));
         cv.put(COLUMN_TIME,timeRing.getTime().toString());
-        cv.put(COLUMN_NOTE,timeRing.getName());
+        cv.put(COLUMN_NOTE,timeRing.getNote());
         return db.update(TABLE_ACCOUNT,cv,COLUMN_ID+" = "+timeRing.getId(),columns);
     }
 
