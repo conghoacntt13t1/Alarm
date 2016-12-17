@@ -8,16 +8,25 @@ import java.util.Date;
  */
 
 public class TimeRing {
+    private int id;
     private Date date;
     private Time time;
     private String note;
     private String name;
+
+    public TimeRing(){
+
+    }
 
     public TimeRing(Date date, Time time, String note, String name) {
         this.date = date;
         this.time = time;
         this.note = note;
         this.name = name;
+    }
+
+    public int getId() {
+        return id;
     }
 
     public Date getDate() {

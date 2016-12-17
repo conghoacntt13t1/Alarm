@@ -3,10 +3,8 @@ package viewpager;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
-import android.support.v4.app.ListFragment;
 
 import java.util.List;
-import com.example.hoa.alarm.*;
 
 /**
  * Created by hoa on 17/12/2016.
